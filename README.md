@@ -24,29 +24,35 @@ Check out our [Getting Started Guide](GET_STARTED.md) for information on how to 
 
 The TeaStore was first published in [Proceedings of the 26th IEEE International Symposium on the Modelling, Analysis, and Simulation of Computer and Telecommunication Systems (MASCOTS2018)](https://ieeexplore.ieee.org/document/8526888). If you use the TeaStore please cite the following publication:
 
-    @inproceedings{KiEiScBaGrKo2018-MASCOTS-TeaStore,
-      author = {J{\'o}akim von Kistowski and Simon Eismann and Norbert Schmitt and Andr{\'e} Bauer and Johannes Grohmann and Samuel Kounev},
-      title = {{TeaStore: A Micro-Service Reference Application for Benchmarking, Modeling and Resource Management Research}},
-      booktitle = {Proceedings of the 26th IEEE International Symposium on the Modelling, Analysis, and Simulation of Computer and Telecommunication Systems},
-      series = {MASCOTS '18},
-      year = {2018},
-      month = {September},
-      location = {Milwaukee, WI, USA},
-    }
+```bibtex
+@inproceedings{KiEiScBaGrKo2018-MASCOTS-TeaStore,
+  author = {J{\'o}akim von Kistowski and Simon Eismann and Norbert Schmitt and Andr{\'e} Bauer and Johannes Grohmann and Samuel Kounev},
+  title = {{TeaStore: A Micro-Service Reference Application for Benchmarking, Modeling and Resource Management Research}},
+  booktitle = {Proceedings of the 26th IEEE International Symposium on the Modelling, Analysis, and Simulation of Computer and Telecommunication Systems},
+  series = {MASCOTS '18},
+  year = {2018},
+  month = {September},
+  location = {Milwaukee, WI, USA},
+}
+```
 
 For an example of a large-scale TeaStore setup we refer to [Microservices: A Performance Tester’s Dream or Nightmare?](https://doi.org/10.1145/3358960.3379124) and the corresponding [replication package](https://doi.org/10.5281/zenodo.3582707).
 
-    @inproceedings{10.1145/3358960.3379124,
-      author = {Eismann, Simon and Bezemer, Cor-Paul and Shang, Weiyi and Okanovi\'{c}, Du\v{s}an and van Hoorn, Andr\'{e}},
-      title = {Microservices: A Performance Tester's Dream or Nightmare?},
-      year = {2020},
-      booktitle = {Proceedings of the ACM/SPEC International Conference on Performance Engineering},
-      pages = {138–149},
-      series = {ICPE '20},
-    }
+```bibtex
+@inproceedings{10.1145/3358960.3379124,
+  author = {Eismann, Simon and Bezemer, Cor-Paul and Shang, Weiyi and Okanovi\'{c}, Du\v{s}an and van Hoorn, Andr\'{e}},
+  title = {Microservices: A Performance Tester's Dream or Nightmare?},
+  year = {2020},
+  booktitle = {Proceedings of the ACM/SPEC International Conference on Performance Engineering},
+  pages = {138–149},
+  series = {ICPE '20},
+}
+```
 
  ## The TeaStore in Action
+ 
  The TeaStore is used as the demo application in the [Cisco Full Stack Observability Workshop](https://www.fsolabs.net/) and as a case study in a number of scientific publications:
+ 
  * A. Horn, H.M. Fard, F. Wolf. *Multi-objective Hybrid Autoscaling of Microservices in Kubernetes Clusters*. In Euro-Par 2022: Parallel Processing, pp 233–250. 2022. https://doi.org/10.1007/978-3-031-12597-3_15
  * M. Elsaadawy, A. Lohner, R. Wang, J. Wang, and B. Kemme. *DyMonD: dynamic application monitoring and service detection framework*. In Proceedings of the 22nd International Middleware Conference: Demos and Posters, pp- 8-9. 2021. https://doi.org/10.1145/3491086.3492471
  * D. Sokolowski, P. Weisenburger, and G. Salvaneschi. *Automating serverless deployments for DevOps organizations.* In ESEC/FSE 2021: Proceedings of the 29th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering, pp. 57-69. 2021. https://doi.org/10.1145/3468264.3468575
