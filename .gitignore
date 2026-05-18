@@ -5,8 +5,8 @@
 RemoteSystemsTempFiles/
 Servers/
 .recommenders/
-*.iml
 .idea/
+*.iml
 
 # Eclipse / Java build
 target/
@@ -24,3 +24,8 @@ e2e-tests/cypress/screenshots/
 
 # Petstore test
 services/tools.descartes.petstore.image/test/
+
+# Terraform (مهم جدًا عشان مشكلتك)
+.terraform/
+*.tfstate
+*.tfstate.*
