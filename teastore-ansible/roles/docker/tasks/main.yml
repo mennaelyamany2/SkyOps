@@ -1,0 +1,21 @@
+---
+- name: Update apt packages
+  apt:
+    update_cache: yes
+  become: yes
+
+- name: Install required packages
+  apt:
+    name:
+      - docker.io
+      - curl
+      - unzip
+    state: present
+  become: yes
+
+- name: Start Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+  become: yes
