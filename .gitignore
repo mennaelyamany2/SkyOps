@@ -1,16 +1,26 @@
-.project
+# IDE files
 .classpath
-/.metadata/
+.metadata/
 .settings/
 RemoteSystemsTempFiles/
 Servers/
-/.recommenders
-services/tools.descartes.petstore.image/test/
-limbo_checkstyle.out.xml
-interfaces/tools.descartes.teastore.entities/.classpath
+.recommenders/
 *.iml
 .idea/
-/e2e-tests/node_modules/
-/e2e-tests/cypress/videos
-/e2e-tests/cypress/screenshots
+
+# Eclipse / Java build
 target/
+
+# Checkstyle
+limbo_checkstyle.out.xml
+
+# Project specific
+interfaces/tools.descartes.teastore.entities/.classpath
+
+# Frontend / tests
+e2e-tests/node_modules/
+e2e-tests/cypress/videos/
+e2e-tests/cypress/screenshots/
+
+# Petstore test
+services/tools.descartes.petstore.image/test/
