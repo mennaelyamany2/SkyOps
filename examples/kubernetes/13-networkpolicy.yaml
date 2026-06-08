@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: teastore-db-policy
+  namespace: teastore
+spec:
+  podSelector:
+    matchLabels:
+      run: teastore-db
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              run: teastore-persistence
+      ports:
+        - protocol: TCP
+          port: 3306

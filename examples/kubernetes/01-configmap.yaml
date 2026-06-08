@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: teastore-config
+  namespace: teastore
+
+data:
+  REGISTRY_HOST: "teastore-registry"
+  DB_HOST: "teastore-db"
+  DB_PORT: "3306"
