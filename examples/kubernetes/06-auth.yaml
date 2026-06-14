@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: teastore-auth
-          image: mennaelyamany/teastore-auth:v2
+          image: mennaelyamany/teastore-auth:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
