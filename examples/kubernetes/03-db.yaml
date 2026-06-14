@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: teastore-db
-          image: mennaelyamany/teastore-db:v1
+          image: mennaelyamany/teastore-db:1.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3306

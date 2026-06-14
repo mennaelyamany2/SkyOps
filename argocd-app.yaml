@@ -1,0 +1,443 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  creationTimestamp: "2026-06-14T09:20:07Z"
+  generation: 21
+  name: teastore
+  namespace: argocd
+  resourceVersion: "29324"
+  uid: 3ed108fa-44b7-4751-b06d-7287875b7ff2
+spec:
+  destination:
+    namespace: teastore
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: examples/kubernetes
+    repoURL: https://github.com/mennaelyamany2/SkyOps
+    targetRevision: main
+  syncPolicy:
+    automated:
+      enabled: true
+      prune: false
+      selfHeal: false
+status:
+  controllerNamespace: argocd
+  health:
+    lastTransitionTime: "2026-06-14T09:20:10Z"
+    status: Progressing
+  history:
+  - deployStartedAt: "2026-06-14T09:20:10Z"
+    deployedAt: "2026-06-14T09:20:13Z"
+    id: 0
+    initiatedBy:
+      automated: true
+    revision: 5e5bfaed13451c9a36617f7f5516d0f94605f424
+    source:
+      path: examples/kubernetes
+      repoURL: https://github.com/mennaelyamany2/SkyOps
+      targetRevision: main
+  operationState:
+    finishedAt: "2026-06-14T09:20:13Z"
+    message: successfully synced (all tasks run)
+    operation:
+      initiatedBy:
+        automated: true
+      retry:
+        limit: 5
+      sync:
+        revision: 5e5bfaed13451c9a36617f7f5516d0f94605f424
+        source:
+          path: examples/kubernetes
+          repoURL: https://github.com/mennaelyamany2/SkyOps
+          targetRevision: main
+    phase: Succeeded
+    startedAt: "2026-06-14T09:20:10Z"
+    syncResult:
+      resources:
+      - group: ""
+        hookPhase: Running
+        kind: Namespace
+        message: namespace/teastore configured
+        name: teastore
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: networking.k8s.io
+        hookPhase: Running
+        kind: NetworkPolicy
+        message: networkpolicy.networking.k8s.io/teastore-db-policy configured
+        name: teastore-db-policy
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: ServiceAccount
+        message: serviceaccount/teastore-service-account configured
+        name: teastore-service-account
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: Secret
+        message: secret/teastore-secret configured
+        name: teastore-secret
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: ConfigMap
+        message: configmap/teastore-config configured
+        name: teastore-config
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: rbac.authorization.k8s.io
+        hookPhase: Running
+        kind: Role
+        message: role.rbac.authorization.k8s.io/teastore-role reconciled. reconciliation
+          required update. role.rbac.authorization.k8s.io/teastore-role configured
+        name: teastore-role
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: rbac.authorization.k8s.io
+        hookPhase: Running
+        kind: RoleBinding
+        message: rolebinding.rbac.authorization.k8s.io/teastore-role-binding reconciled.
+          reconciliation required update. rolebinding.rbac.authorization.k8s.io/teastore-role-binding
+          configured
+        name: teastore-role-binding
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: Service
+        message: service/teastore-db configured
+        name: teastore-db
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: Service
+        message: service/teastore-image configured
+        name: teastore-image
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: Service
+        message: service/teastore-recommender configured
+        name: teastore-recommender
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: Service
+        message: service/teastore-webui configured
+        name: teastore-webui
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: Service
+        message: service/teastore-auth configured
+        name: teastore-auth
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: Service
+        message: service/teastore-registry configured
+        name: teastore-registry
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: ""
+        hookPhase: Running
+        kind: Service
+        message: service/teastore-persistence configured
+        name: teastore-persistence
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        images:
+        - fluent/fluent-bit:latest
+        kind: DaemonSet
+        message: daemonset.apps/teastore-logger configured
+        name: teastore-logger
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        images:
+        - mennaelyamany/teastore-db:v1
+        kind: Deployment
+        message: deployment.apps/teastore-db configured
+        name: teastore-db
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        images:
+        - mennaelyamany/teastore-image:v1
+        kind: Deployment
+        message: deployment.apps/teastore-image configured
+        name: teastore-image
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        images:
+        - mennaelyamany/teastore-webui:v2
+        kind: Deployment
+        message: deployment.apps/teastore-webui configured
+        name: teastore-webui
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        images:
+        - mennaelyamany/teastore-registry:v1
+        kind: Deployment
+        message: deployment.apps/teastore-registry configured
+        name: teastore-registry
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        images:
+        - mennaelyamany/teastore-persistence:v1
+        kind: Deployment
+        message: deployment.apps/teastore-persistence configured
+        name: teastore-persistence
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        images:
+        - mennaelyamany/teastore-recommender:v1
+        kind: Deployment
+        message: deployment.apps/teastore-recommender configured
+        name: teastore-recommender
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: apps
+        hookPhase: Running
+        images:
+        - mennaelyamany/teastore-auth:v2
+        kind: Deployment
+        message: deployment.apps/teastore-auth configured
+        name: teastore-auth
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      - group: networking.k8s.io
+        hookPhase: Running
+        kind: Ingress
+        message: ingress.networking.k8s.io/teastore-ingress configured
+        name: teastore-ingress
+        namespace: teastore
+        status: Synced
+        syncPhase: Sync
+        version: v1
+      revision: 5e5bfaed13451c9a36617f7f5516d0f94605f424
+      source:
+        path: examples/kubernetes
+        repoURL: https://github.com/mennaelyamany2/SkyOps
+        targetRevision: main
+  reconciledAt: "2026-06-14T09:22:13Z"
+  resourceHealthSource: appTree
+  resources:
+  - kind: ConfigMap
+    name: teastore-config
+    namespace: teastore
+    status: Synced
+    version: v1
+  - kind: Namespace
+    name: teastore
+    status: Synced
+    version: v1
+  - kind: Secret
+    name: teastore-secret
+    namespace: teastore
+    status: Synced
+    version: v1
+  - kind: Service
+    name: teastore-auth
+    namespace: teastore
+    status: Synced
+    version: v1
+  - kind: Service
+    name: teastore-db
+    namespace: teastore
+    status: Synced
+    version: v1
+  - kind: Service
+    name: teastore-image
+    namespace: teastore
+    status: Synced
+    version: v1
+  - kind: Service
+    name: teastore-persistence
+    namespace: teastore
+    status: Synced
+    version: v1
+  - kind: Service
+    name: teastore-recommender
+    namespace: teastore
+    status: Synced
+    version: v1
+  - kind: Service
+    name: teastore-registry
+    namespace: teastore
+    status: Synced
+    version: v1
+  - kind: Service
+    name: teastore-webui
+    namespace: teastore
+    status: Synced
+    version: v1
+  - kind: ServiceAccount
+    name: teastore-service-account
+    namespace: teastore
+    status: Synced
+    version: v1
+  - group: apps
+    kind: DaemonSet
+    name: teastore-logger
+    namespace: teastore
+    status: Synced
+    version: v1
+  - group: apps
+    kind: Deployment
+    name: teastore-auth
+    namespace: teastore
+    status: Synced
+    version: v1
+  - group: apps
+    kind: Deployment
+    name: teastore-db
+    namespace: teastore
+    status: Synced
+    version: v1
+  - group: apps
+    kind: Deployment
+    name: teastore-image
+    namespace: teastore
+    status: Synced
+    version: v1
+  - group: apps
+    kind: Deployment
+    name: teastore-persistence
+    namespace: teastore
+    status: Synced
+    version: v1
+  - group: apps
+    kind: Deployment
+    name: teastore-recommender
+    namespace: teastore
+    status: Synced
+    version: v1
+  - group: apps
+    kind: Deployment
+    name: teastore-registry
+    namespace: teastore
+    status: Synced
+    version: v1
+  - group: apps
+    kind: Deployment
+    name: teastore-webui
+    namespace: teastore
+    status: Synced
+    version: v1
+  - group: networking.k8s.io
+    kind: Ingress
+    name: teastore-ingress
+    namespace: teastore
+    status: Synced
+    version: v1
+  - group: networking.k8s.io
+    kind: NetworkPolicy
+    name: teastore-db-policy
+    namespace: teastore
+    status: Synced
+    version: v1
+  - group: rbac.authorization.k8s.io
+    kind: Role
+    name: teastore-role
+    namespace: teastore
+    status: Synced
+    version: v1
+  - group: rbac.authorization.k8s.io
+    kind: RoleBinding
+    name: teastore-role-binding
+    namespace: teastore
+    status: Synced
+    version: v1
+  sourceHydrator: {}
+  sourceType: Directory
+  summary:
+    externalURLs:
+    - http://teastore.local/
+    images:
+    - descartesresearch/teastore-db:latest
+    - fluent/fluent-bit:latest
+    - mennaelyamany/teastore-auth:v2
+    - mennaelyamany/teastore-db:v1
+    - mennaelyamany/teastore-image:v1
+    - mennaelyamany/teastore-persistence:v1
+    - mennaelyamany/teastore-recommender:v1
+    - mennaelyamany/teastore-registry:v1
+    - mennaelyamany/teastore-webui:v2
+  sync:
+    comparedTo:
+      destination:
+        namespace: teastore
+        server: https://kubernetes.default.svc
+      source:
+        path: examples/kubernetes
+        repoURL: https://github.com/mennaelyamany2/SkyOps
+        targetRevision: main
+    revision: 5e5bfaed13451c9a36617f7f5516d0f94605f424
+    status: Synced
