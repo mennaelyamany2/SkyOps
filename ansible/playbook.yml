@@ -1,0 +1,38 @@
+---
+- name: Configure EKS and Deploy TeaStore
+  hosts: localhost
+  gather_facts: false
+
+  vars:
+    cluster_name: "teastore-cluster"
+    region: "eu-west-1"
+    k8s_manifests: "~/TeaStore/examples/kubernetes"
+
+  tasks:
+    - name: Update kubeconfig for EKS cluster
+      command: >
+        aws eks update-kubeconfig
+        --name {{ cluster_name }}
+        --region {{ region }}
+
+    - name: Verify cluster connection
+      command: kubectl get nodes
+      register: nodes_output
+
+    - name: Show cluster nodes
+      debug:
+        msg: "{{ nodes_output.stdout }}"
+
+    - name: Apply Kubernetes manifests
+      command: kubectl apply -f {{ k8s_manifests }}
+
+    - name: Wait for pods to be ready
+      command: kubectl wait --for=condition=ready pod --all -n teastore --timeout=300s
+
+    - name: Get webui service URL
+      command: kubectl get svc teastore-webui -n teastore -o jsonpath='{.status.loadBalancer.ingress[0].hostname}'
+      register: webui_url
+
+    - name: Show website URL
+      debug:
+        msg: "Website is available at: http://{{ webui_url.stdout }}:8080/tools.descartes.teastore.webui/"

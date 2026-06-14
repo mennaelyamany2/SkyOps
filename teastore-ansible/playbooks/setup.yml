@@ -1,6 +1,0 @@
----
-- name: Setup TeaStore Environment
-  hosts: local
-
-  roles:
-    - docker
