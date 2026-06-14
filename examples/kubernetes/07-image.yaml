@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: teastore-image
-          image: descartesresearch/teastore-image:latest
+          image: mennaelyamany/teastore-image:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
@@ -27,10 +27,10 @@ spec:
               value: "teastore-registry"
           resources:
             requests:
-              memory: "512Mi"
-              cpu: "100m"
-            limits:
               memory: "1Gi"
+              cpu: "200m"
+            limits:
+              memory: "2Gi"
               cpu: "500m"
 ---
 apiVersion: v1

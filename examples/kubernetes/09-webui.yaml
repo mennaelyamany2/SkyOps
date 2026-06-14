@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: teastore-webui
-          image: descartesresearch/teastore-webui:latest
+          image: mennaelyamany/teastore-webui:v2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
@@ -30,7 +30,7 @@ spec:
               memory: "512Mi"
               cpu: "100m"
             limits:
-              memory: "2Gi"
+              memory: "1Gi"
               cpu: "500m"
 ---
 apiVersion: v1
@@ -42,10 +42,10 @@ metadata:
     app: teastore
     run: teastore-webui
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 8080
-      nodePort: 30080
+      targetPort: 8080
       protocol: TCP
   selector:
     run: teastore-webui

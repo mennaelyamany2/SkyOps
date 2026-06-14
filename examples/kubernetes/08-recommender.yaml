@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: teastore-recommender
-          image: descartesresearch/teastore-recommender:latest
+          image: mennaelyamany/teastore-recommender:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080

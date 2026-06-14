@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: teastore-persistence
-          image: descartesresearch/teastore-persistence:latest
+          image: mennaelyamany/teastore-persistence:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
