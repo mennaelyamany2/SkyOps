@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: teastore-webui
-          image: mennaelyamany/teastore-webui:v2
+          image: mennaelyamany/teastore-webui:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
